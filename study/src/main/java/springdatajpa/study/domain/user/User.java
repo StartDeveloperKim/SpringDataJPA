@@ -1,13 +1,12 @@
 package springdatajpa.study.domain.user;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import springdatajpa.study.domain.BaseTimeEntity;
 import springdatajpa.study.domain.notice.Notice;
 import springdatajpa.study.web.dto.UserRegisterDto;
+import springdatajpa.study.web.dto.UserUpdateDto;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,10 +46,19 @@ public class User extends BaseTimeEntity {
         this.nickname = nickname;
     }
 
+    public User() {
+
+    }
+
     //==생성 메서드==//
     public static User createUser(UserRegisterDto registerDto) {
         return new User(registerDto.getId(), registerDto.getPassword(),
                 registerDto.getName(), registerDto.getNickname());
     }
 
+    //==업데이트 메서드==//
+    public void updateUser(UserUpdateDto updateDto) {
+        this.password = updateDto.getPassword();
+        this.nickname = updateDto.getNickname();
+    }
 }

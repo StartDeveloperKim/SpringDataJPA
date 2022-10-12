@@ -37,6 +37,10 @@ public class Notice extends BaseTimeEntity {
         this.content = requestDto.getContent();
     }
 
+    public Notice() {
+
+    }
+
     //==생성 메서드==//
     public static Notice createNotice(NoticeRequestDto requestDto, User user) {
         Notice notice = new Notice(requestDto);

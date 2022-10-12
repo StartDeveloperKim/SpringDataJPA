@@ -1,4 +1,4 @@
-package springdatajpa.study.web;
+package springdatajpa.study.web.notice;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
