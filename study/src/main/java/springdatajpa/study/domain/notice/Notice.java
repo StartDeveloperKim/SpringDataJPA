@@ -54,5 +54,9 @@ public class Notice extends BaseTimeEntity {
         user.getNotices().add(this);
     }
 
-
+    //==업데이트 메서드==//
+    public void updateNotice(NoticeRequestDto requestDto) {
+        this.title = requestDto.getTitle();
+        this.content = requestDto.getContent();
+    }
 }
